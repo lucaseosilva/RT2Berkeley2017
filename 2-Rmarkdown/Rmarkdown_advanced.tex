@@ -124,7 +124,7 @@
   \postauthor{\par}
   \predate{\centering\large\emph}
   \postdate{\par}
-  \date{04 May, 2017}
+  \date{19 junho, 2017}
 
 \usepackage[english]{babel}
 \usepackage{color}
@@ -282,10 +282,15 @@ Then, let's load our packages:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{need <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"foreign"}\NormalTok{, }\StringTok{"sandwich"}\NormalTok{, }\StringTok{"ggplot2"}\NormalTok{, }\StringTok{"stargazer"}\NormalTok{) }\CommentTok{# list packages you need}
-\NormalTok{have <-}\StringTok{ }\NormalTok{need %in%}\StringTok{ }\KeywordTok{rownames}\NormalTok{(}\KeywordTok{installed.packages}\NormalTok{()) }\CommentTok{# see which are already}
-\NormalTok{if(}\KeywordTok{any}\NormalTok{(!have)) }\KeywordTok{install.packages}\NormalTok{(need[!have]) }\CommentTok{# installs the missing ones }
-\KeywordTok{invisible}\NormalTok{(}\KeywordTok{lapply}\NormalTok{(need, library, }\DataTypeTok{character.only=}\NormalTok{T)) }\CommentTok{# then loads them all}
+\CommentTok{#need <- c("foreign", "sandwich", "ggplot2", "stargazer") # list packages you need}
+\CommentTok{#have <- need %in% rownames(installed.packages()) # see which are already}
+\CommentTok{#if(any(!have)) install.packages(need[!have]) # installs the missing ones }
+\CommentTok{#invisible(lapply(need, library, character.only=T)) # then loads them all}
+\KeywordTok{require}\NormalTok{(foreign)}
+\KeywordTok{require}\NormalTok{(sandwich)}
+\KeywordTok{require}\NormalTok{(ggplot2)}
+\KeywordTok{require}\NormalTok{(stargazer)}
+\KeywordTok{require}\NormalTok{(haven)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -293,7 +298,7 @@ Load the data:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{washb <-}\StringTok{ }\KeywordTok{read.dta}\NormalTok{(}\StringTok{"WASHBpublic_mock.dta"}\NormalTok{)}
+\NormalTok{washb <-}\StringTok{ }\KeywordTok{read_dta}\NormalTok{(}\StringTok{"WASHBpublic_mock.dta"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
